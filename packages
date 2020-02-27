@@ -1,0 +1,5 @@
+https://devcenter.heroku.com/articles/git
+
+heroku ps:scale algtest=1
+
+heroku logs --tail
