@@ -9,19 +9,15 @@ import pylivetrader.algorithm as algo
 #import zipline.optimize as opt # ?????
 
 import os
-os.environ["IEX_TOKEN"] = ""
+os.environ["IEX_TOKEN"] = "pk_7de7b2552dac4e3b805bfc0558a7e3ee"
 
 
-from quantopian.pipeline import Pipeline
-
-from quantopian.pipeline.data import builtin, Fundamentals
-
-#from quantopian.pipeline.factors import SimpleBeta, RSI, AnnualizedVolatility
+from zipline.pipeline import Pipeline
 from pipeline_live.data.alpaca.factors import SimpleBeta, RSI, AnnualizedVolatility
+from pipeline_live.data.iex.classifiers import Sector
 
-from quantopian.pipeline.classifiers.fundamentals import Sector
-
-from quantopian.pipeline.filters import QTradableStocksUS
+#from quantopian.pipeline.filters import QTradableStocksUS
+from pipeline_live.data.iex.pricing import USEquityPricing as QTradableStocksUS
 
 
 
